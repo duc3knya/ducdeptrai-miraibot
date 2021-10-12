@@ -1,0 +1,72 @@
+[
+    {
+        "rodType": 1,
+        "name": "Wooden fishing rod",
+        "enchantRod": {},
+        "cooldown": 60,
+        "durability": 100,
+        "rateBroken": [16, 50],
+        "moneyFix": [10, 50],
+        "cost": 100
+    },
+    {
+        "rodType": 2,
+        "name": "Stone fishing rod",
+        "enchantRod": {},
+        "cooldown": 50,
+        "durability": 200,
+        "rateBroken": [30, 100],
+        "moneyFix": [40, 100],
+        "cost": 300
+    },
+    {
+        "rodType": 3,
+        "name": "Iron fishing rod",
+        "enchantRod": {},
+        "cooldown": 40,
+        "durability": 500,
+        "rateBroken": [30, 250],
+        "moneyFix": [100, 200],
+        "cost": 500
+    },
+    {
+        "rodType": 4,
+        "name": "Golden fishing rod",
+        "enchantRod": {},
+        "cooldown": 30,
+        "durability": 350,
+        "rateBroken": [70, 150],
+        "moneyFix": [100, 150],
+        "cost": 600
+    },
+    {
+        "rodType": 5,
+        "name": "Emerald fishing rod",
+        "enchantRod": {},
+        "cooldown": 20,
+        "durability": 700,
+        "rateBroken": [20, 150],
+        "moneyFix": [200, 400],
+        "cost": 800
+    },
+    {
+        "rodType": 6,
+        "name": "Diamond fishing rod",
+        "enchantRod": {},
+        "cooldown": 10,
+        "durability": 1200,
+        "rateBroken": [10, 250],
+        "moneyFix": [500, 700],
+        "cost": 1400
+    },
+    {
+        "rodType": 7,
+        "name": "ULTRA ULTIMATE FISHING ROD",
+        "enchantRod": {},
+        "cooldown": 5,
+        "durability": 1000000000000000,
+        "rateBroken": [1, 10000],
+        "moneyFix": [10000, 50000],
+        "cost": 999999
+    }
+]
