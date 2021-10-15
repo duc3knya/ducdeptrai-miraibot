@@ -5,12 +5,12 @@
 
 module.exports.config = {
     name: "img",
-    version: "3.1.2",
+    version: "3.1.3",
     hasPermssion: 0,
     credits: "ProCoderMew",
     description: "Kho Ảnh",
     commandCategory: "nsfw",
-    usages: "[boy/girl/cosplay/wibu/meow/dog]",
+    usages: "[boy/girl/cosplay/sexy/wibu/meow/dog]",
     cooldowns: 5,
     dependencies: {
         "axios": "",
@@ -38,6 +38,9 @@ module.exports.run = async function({ api, event, args }) {
         break;
         case "cosplay":
             type = "cosplay";
+        break;
+        case "sexy":
+            type = "sexy";
         break;
         case "wibu":
             type = "wibu";

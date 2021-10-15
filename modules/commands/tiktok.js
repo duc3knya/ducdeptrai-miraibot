@@ -1,47 +1,38 @@
-module.exports.config = {
-  name: "tiktok",
-  version: "1.0.0",
-  hasPermssion: 0,
-  credits: "CatalizCS",
-  description: "Phát video thông qua link YouTube hoặc từ khoá tìm kiếm",
-  commandCategory: "Info",
-  usages: "[Text]",
-  cooldowns: 10,
-  dependencies: {
-    "tiktok-scraper": "",
-    "axios": "",
-    "fs-extra": ""
-  }
-};
-module.exports.run = async function({ api, event, args, Currencies, utils }) {
-  const axios = global.nodemodule['axios'];
-  const tikk = global.nodemodule['tiktok-scraper'];
-  const fs = global.nodemodule["fs-extra"];
-  if (!args.join("") != " ") { return api.sendMessage("Bạn phải ngập id tiktok !!!", event.threadID, event.messageID); }
-  var uid = args[0];
-  try {
-    const options = {
-      number: 100,
-      by_user_id: true,
-      sessionList: ['sid_tt=01b48a403ce585d04be97107dc122c7c']
-    };
-    const user = await tikk.getUserProfileInfo(uid, options);
-    var id = user.user.uniqueId;
-    var name = user.user.nickname;
-    var followe = user.stats.followerCount;
-    var followi = user.stats.followingCount;
-    var video = await user.stats.videoCount;
+/**
+* @author ProCoderMew
+* @warn Do not edit code or edit credits
+*/
 
-    var abc = await user.user.signature;
-    var tym = await user.stats.heart;
-    var img = await user.user.avatarMedium;
-    var path = __dirname + "/cache/tik1.png";
-    let getimg = (await axios.get(`${img}`, { responseType: 'arraybuffer' })).data;
-    fs.writeFileSync(path, Buffer.from(getimg, "utf-8"));
-    console.log(user);
-  } catch (error) {
-    console.log(error);
-  }
-  var body = `👀Tên:${name}\n🪧ID:${id}\n${abc}\n✅Follower: ${followe}\n❌Following: ${followi}\n💗Số lượt tym: ${tym}\n🖥Số video: ${video} `
-  return api.sendMessage({ body: body, attachment: fs.createReadStream(__dirname + "/cache/tik1.png") }, event.threadID, event.messageID);
+module.exports.config = {
+    name: "tiktok",
+    version: "1.0.0",
+    hasPermssion: 0,
+    credits: "ProCoderMew",
+    description: "Get tiktok video without watermark",
+    commandCategory: "media",
+    usages: "[url]",
+    cooldowns: 5,
+    dependencies: {
+        "axios": "",
+        "fs-extra": ""
+    },
+    envConfig: {
+        APIKEY: ""
+    }
+};
+
+module.exports.run = async function({ api, event, args }) {
+    const { APIKEY } = global.configModule.tiktok;
+    const { createReadStream, unlinkSync, writeFileSync } = global.nodemodule["fs-extra"];
+    const axios = global.nodemodule["axios"];
+    const { threadID, messageID } = event;
+    if (args.length == 0) return api.sendMessage("Da co loi xay ra");
+    var { data } = await axios.get(`https://meewmeew.info/tiktok/api?url=${args[0]}&apikey=${APIKEY}`);
+    var path = __dirname + `/cache/tiktok.mp4`;
+    if (data.success == false) return api.sendMessage(data.error, threadID, messageID);
+    else {
+        const { data: stream } = await axios.get(data.url, { responseType: 'arraybuffer' });
+        writeFileSync(path, Buffer.from(stream, 'utf-8'));
+        return api.sendMessage({ attachment: createReadStream(path) }, threadID, () => unlinkSync(path), messageID);       
+    }
 }

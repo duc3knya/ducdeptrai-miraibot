@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "bốc thăm",
+  name: "boctham",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Lazic Team",
