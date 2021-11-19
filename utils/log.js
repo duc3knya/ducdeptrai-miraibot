@@ -17,13 +17,13 @@ module.exports = (data, option) => {
 module.exports.loader = (data, option) => {
 	switch (option) {
 		case "warn":
-			console.log(chalk.yellow('[ OREO ] » ') + data);
+			console.log(chalk.yellow('[ LeNangHoangDuc ] » ') + data);
 			break;
 		case "error":
-			console.log(chalk.red('[ OREO ] » ') + data);
+			console.log(chalk.red('[ LeNangHoangDuc ] » ') + data);
 			break;
 		default:
-			console.log(chalk.green(`[ OREO ] » `) + data);
+			console.log(chalk.green(`[ LeNangHoangDuc ] » `) + data);
 			break;
 	}
 }

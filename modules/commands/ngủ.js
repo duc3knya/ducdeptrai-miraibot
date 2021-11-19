@@ -17,13 +17,13 @@ module.exports.onLoad = () => {
     const request = require("request");
     const dirMaterial = __dirname + `/noprefix/`;
     if (!fs.existsSync(dirMaterial + "noprefix")) fs.mkdirSync(dirMaterial, { recursive: true });
-    if (!fs.existsSync(dirMaterial + "bye.gif")) request("https://c.tenor.com/oJ0avKZmyYcAAAAC/bts-v-bts-ng%E1%BB%A7ngon.gif").pipe(fs.createWriteStream(dirMaterial + "bye.gif"));
+    if (!fs.existsSync(dirMaterial + "bye.gif")) request("https://mrwgifs.com/wp-content/uploads/2013/05/Sleeping-Cozy-Anime-Gif.gif").pipe(fs.createWriteStream(dirMaterial + "bye.gif"));
 }
 module.exports.handleEvent = async ({ event, api, Currencies,Users, args, utils, global, client }) => {
     const fs = require("fs");
     let name = await Users.getNameUser(event.senderID)
     var msg = {
-                body: `${name} chúc chị ngủ ngon ❤️`,
+                body: `${name} chúc bé ngủ ngon ❤️`,
                 attachment: fs.createReadStream(__dirname + `/noprefix/bye.gif`)
             }
     if (event.body.toLowerCase() == "đi ngủ đây"){
@@ -38,5 +38,5 @@ module.exports.handleEvent = async ({ event, api, Currencies,Users, args, utils,
         return api.sendMessage(msg,event.threadID,event.messageID);}
         };
 module.exports.run = async ({ event, api, Currencies, args, utils }) => {
-return api.sendMessage("Dùng sai cách rồi lêu lêu",event.threadID)
+return api.sendMessage("Dùng sai cách rồi lêu lêu noprefix mà",event.threadID)
     }

@@ -1,5 +1,5 @@
 ﻿module.exports.config = {
-    name: "baucua",
+    name: "cobac",
     version: "1.0.0",
     hasPermssion: 0,
     credits: "Syn",

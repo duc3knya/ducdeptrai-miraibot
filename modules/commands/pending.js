@@ -26,7 +26,7 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
         const index = body.split(/\s+/);
         for (const singleIndex of index) {
             if (isNaN(singleIndex) || singleIndex <= 0 || singleIndex > handleReply.pending.length) return api.sendMessage(`${singleIndex} Không phải là một con số hợp lệ`, threadID, messageID);
-            api.sendMessage("𝐊𝐞̂́𝐭 𝐧𝐨̂́𝐢 𝐛𝐨𝐭 𝐭𝐡𝐚̀𝐧𝐡 𝐜𝐨̂𝐧𝐠 >𝟑 ⚒⚙️\n-------------------------\n𝐏𝐫𝐞𝐟𝐢𝐱 𝐜𝐮̉𝐚 𝐛𝐨𝐭 𝐥𝐚̀ [ /help ]\n-------------------------\n𝐕𝐮𝐢 𝐥𝐨̀𝐧𝐠 𝐤𝐡𝐨̂𝐧𝐠 𝐬𝐩𝐚𝐦 𝐛𝐨𝐭 ⚙️🔧\n-------------------------\n𝐂𝐡𝐮́𝐜 𝐦𝐨̣𝐢 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐬𝐮̛̉ 𝐝𝐮̣𝐧𝐠 𝐛𝐨𝐭 𝐯𝐯\n-------------------------\n𝐀𝐝𝐦𝐢𝐧:☘️🍼🍼Lê Năng Hoàng Đức🍼🍼☘️\n-------------------------", handleReply.pending[singleIndex - 1].threadID);
+            api.sendMessage("𝐊𝐞̂́𝐭 𝐧𝐨̂́𝐢 𝐛𝐨𝐭 𝐭𝐡𝐚̀𝐧𝐡 𝐜𝐨̂𝐧𝐠 >𝟑 ⚒⚙️\n-------------------------\n𝐏𝐫𝐞𝐟𝐢𝐱 𝐜𝐮̉𝐚 𝐛𝐨𝐭 𝐥𝐚̀ [ /help ]\n-------------------------\n𝐕𝐮𝐢 𝐥𝐨̀𝐧𝐠 𝐤𝐡𝐨̂𝐧𝐠 𝐬𝐩𝐚𝐦 𝐛𝐨𝐭 ⚙️🔧\n-------------------------\n𝐂𝐡𝐮́𝐜 𝐦𝐨̣𝐢 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐬𝐮̛̉ 𝐝𝐮̣𝐧𝐠 𝐛𝐨𝐭 𝐯𝐯\n-------------------------\n𝐀𝐝𝐦𝐢𝐧:☘️Lê Năng Hoàng Đức☘️\n-------------------------", handleReply.pending[singleIndex - 1].threadID);
             count+=1;
         }
         return api.sendMessage(`Đã phê duyệt thành công ${count} nhóm!`, threadID, messageID);

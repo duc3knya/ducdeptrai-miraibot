@@ -11,7 +11,7 @@ module.exports.config = {
 };
 module.exports.handleEvent = function({ api, event }) {
   var { threadID, messageID } = event;
-  var tl = ["chào bạn tôi là bot của LeNangHoangDuc", "bạn gọi tôi có việc gì?", "tôi yêu bạn vai lon", "Yêu em <3", "Hi, chào con vợ bé:3", "Vợ gọi có việc gì không?", "Sử dụng callad để liên lạc với admin!", "Em là bot cute nhất hành tinh", "Nói gì thế con lợn", "Em đây~~~~", "Yêu anh Thịnh nhất", "chị ấy là bae của Thịnh", "Yêu thương admin nhất", "Anh ấy là phụ trợ của admin", "Sao thế công chúa", "Đừng làm em đau ~~~~", "Rên với em nhé a á á á", "Tuyển phi công nè ạ", "Làm đĩ ko ạ? dui lắm", "Cậu cô đơn ko?", "Chịch ko ạ vã quá!!!", "Được của ló :)))", "Em dthw như chủ của em ạ", "Đừng khen em ngại quá hí hí" ,"Làm vợ em ko ạ?", "Đừng spam em nha :<<, cậu chủ em mệt lắm ời", "Cút ra", "Đừng đè em mạnh!!!", "Đút tutu thôi em đau :'(", "Yêu cậu như một cực hình\nNhấp lên nhấp xuống hai mình cùng rên", "Spam cc cút", "Yêu em ko?", "Chồng em đây rồi"];
+  var tl = ["chào bạn tôi là bot của LeNangHoangDuc", "bạn gọi tôi có việc gì?", "tôi yêu bạn vai lon", "Yêu em <3", "Hi, chào con vợ bé:3", "Vợ gọi có việc gì không?", "Sử dụng callad để liên lạc với admin!", "Em là bot cute nhất hành tinh", "Nói gì thế con lợn", "Em đây~~~~", "Yêu anh Đức nhất", "chị ấy là bae của năng đức", "Yêu thương admin nhất", "Anh ấy là phụ trợ của admin", "Sao thế công chúa", "Đừng làm em đau ~~~~", "Rên với em nhé a á á á", "Tuyển phi công nè ạ", "Làm đĩ ko ạ? dui lắm", "Cậu cô đơn ko?", "Chịch ko ạ vã quá!!!", "Được của ló :)))", "Em dthw như chủ của em ạ", "Đừng khen em ngại quá hí hí" ,"Làm vợ em ko ạ?", "Đừng spam em nha :<<, cậu chủ em mệt lắm ời", "Cút ra", "Đừng đè em mạnh!!!", "Đút tutu thôi em đau :'(", "Yêu cậu như một cực hình\nNhấp lên nhấp xuống hai mình cùng rên", "Spam cc cút", "Yêu em ko?", "Chồng em đây rồi"];
   var rand = tl[Math.floor(Math.random() * tl.length)]
 
   if ((event.body.toLowerCase() == "bot ngu")) {
@@ -24,7 +24,7 @@ module.exports.handleEvent = function({ api, event }) {
       api.removeUserFromGroup(api.getCurrentUserID(), threadID));
   };
 
-   if ((event.body.toLowerCase() == "bot cút")) {
+   if ((event.body.toLowerCase() == "cút")) {
     return api.sendMessage("À ừ vậy thôi tao đi cảm ơn bọn mày trong thời gian qua cùng tao vui vẻ....vậy thôi tao đi pp ☺😊", threadID, () =>
       api.removeUserFromGroup(api.getCurrentUserID(), threadID));
   };
@@ -111,7 +111,7 @@ module.exports.handleEvent = function({ api, event }) {
     return api.sendMessage("Anh ấy tuy ko đẹp trai hay giỏi gì nhưng được cái hài hước và luôn mong đạt được mục tiêu anh ấy muốn <3 <3 ", threadID);
   };
 
-  if ((event.body.toLowerCase() == "@Le Nang Hoang Duc") || (event.body.toLowerCase() == "@Le Nang Hoang Duc")) {
+  if ((event.body.toLowerCase() == "@Lê Năng Hoàng Đức") || (event.body.toLowerCase() == "@Le Nang Hoang Duc")) {
     return api.sendMessage("Ai kêu chủ tao đấy, mà làm ơn đừng tag anh ấy mà hãy liên hệ qua Fb: https://www.facebook.com/Mark.Zuckerberg2405", threadID);
   };
 
@@ -140,7 +140,7 @@ module.exports.handleEvent = function({ api, event }) {
   };
 
   if ((event.body.toLowerCase() == "vãi") || (event.body.toLowerCase() == "vai")) {
-    return api.sendMessage("Vãi lồn....:)))", threadID);
+    return api.sendMessage("Vãi cái địt mẹ mày à cút mẹ mày đi", threadID);
   };
 
   if ((event.body.toLowerCase() == "Alo") || (event.body.toLowerCase() == "alo")) {
